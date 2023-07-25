@@ -1,3 +1,0 @@
-function functie(a) {
-
-}
