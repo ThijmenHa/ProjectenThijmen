@@ -1,0 +1,8 @@
+#output{
+border:solid 2px red;
+display: none;
+}
+
+#tgetal {
+    width: 50px;
+}

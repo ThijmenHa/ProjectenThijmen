@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="stylesheet.css" rel="stylesheet">
+   
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>axios test</title>
+</head>
+<body>
+    <p1><b>Nr </b> 
+    </p1>
+    <p1 id="naam"><b>Naam</b>
+    </p1>
+    <p1 id="brouwerij"><b>Brouwerij</b>
+    </p1>
+    
+    </select>
+    <div id="biertjes"> 
+    
+    </div>  
+
+
+    <script>
+
+        axios.get("https://15euros.nl/api/bier_basic.php")
+        .then(function (response) {
+        console.log (response.data)
+            const json = response.data; 
+        
+        zetopScherm(json);    
+        });
+        
+        
+        
+        function zetopScherm(data)
+        {
+        let x = "<table>";
+        let i=1
+        data.forEach(element => {
+            x+= "<tr>" 
+                x += "<td>";
+                    x += i++;
+                    x += "</td>";
+        
+                
+                x += "<td>";
+                    x += element.naam;
+                    x += "</td>";
+        
+                    x += "<td>";
+                    x += element.brouwer;
+                    x += "</td>";
+
+                    x += "<td>";
+                    x += element.gisting;
+                    x += "</td>";
+                x += "</tr>";
+        
+        });
+        x += "</table>";
+        document.getElementById('output').innerHTML = x;
+        }
+        
+        </script>
+<div id="output"></div>
+</body>
+</html> 
+

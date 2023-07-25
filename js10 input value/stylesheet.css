@@ -1,0 +1,8 @@
+#outputp {
+    color: red;
+    font-size: 150%;
+}
+#outputveld {
+    border: solid red 5px;
+    display: none;
+}
